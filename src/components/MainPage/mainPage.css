@@ -1,0 +1,191 @@
+.mainpage{
+    padding: 30px;
+    height: 100%;
+    & svg{
+        width: 20px;
+        height: 100%;
+    }
+}
+.mainpage textarea{
+    resize: none;
+}
+.color-input-label{
+    transition: ease-in-out .2s;
+    background-color: rgba(226, 226, 226, 0.75);
+    position: relative;
+    overflow: hidden;
+    & input{
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+.mainpage form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: solid 2px gray;
+    width: min(700px, calc(100% - 20px));
+    margin: auto;
+    overflow: hidden;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(118, 118, 118, 0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(118, 118, 118, 0.75);
+    box-shadow: 0px 0px 4px 0px rgba(118, 118, 118, 0.75);
+    & textarea, input{
+        border: none;
+        outline: none;
+        font-size: .9rem;
+        padding: 5px 10px;
+        font-family: inherit;
+        background-color: transparent;
+    }
+    & hr{
+        border: none;
+        border-top: solid thin rgb(205, 205, 205);
+        width: calc(100% - 20px);
+        margin: 5px auto;
+    }
+    & .btn-div{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-top: 10px;
+        & button, label{
+            border-radius: 20px;
+            font-size: 1rem;
+            padding: 8px 16px;
+            display: flex;
+            cursor: pointer;
+            font-weight: bold;
+            gap: 5px;
+            border: none;
+            color: gray;
+            &:hover{
+                background-color: rgba(204, 204, 204, 0.75);
+            }
+        }
+        & button[type="submit"]{
+            background-color: var(--color-2);
+            color: white;
+            border: solid thin var(--btn-hover-color);
+            transition: ease-in-out .2s;
+            &:hover{
+                background-color: var(--btn-hover-color);
+            }
+        }
+    }
+}
+input#title{
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+}
+.title-input-div{
+    display: flex;
+}
+.pin-btn, .note-item .color-input-label, .delete-btn, .pagination button{
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-content: center;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(226, 226, 226, 0.75);
+    transition: ease-in-out .2s;
+    &:hover{
+        background-color: rgba(204, 204, 204, 0.75);
+    }
+}
+.delete-btn{
+    margin-left: auto;
+}
+input#tagline{
+    font-style: italic;
+}
+h4{
+    margin-top: 30px;
+    margin-left: 5px;
+}
+.note-container{
+    display: grid;
+    margin: 10px auto;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    & h2{
+        font-size: 1rem;
+    }
+    & p{
+        font-size: .9rem;
+        &:first-of-type{
+            margin: 10px 0;
+        }
+        &:last-of-type{
+            white-space: pre-line;
+        }
+    }
+}
+.note-item{
+    border: solid thin rgb(184, 184, 184);
+    padding: 16px;
+    border-radius: 8px;
+    height: fit-content;
+}
+.style-div{
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+.modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.pagination{
+    width: fit-content;
+    margin: 30px auto;
+    display: flex;
+    gap: 10px;
+    & button{
+        border: thin solid rgb(195, 195, 195);
+    }
+    & button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    & .current-page {
+      background-color: var(--btn-hover-color) !important;
+      color: #fff;
+    }
+}
+@media (max-width: 1500px){
+    .note-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1200px){
+    .note-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px){
+    .note-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+    .note-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
