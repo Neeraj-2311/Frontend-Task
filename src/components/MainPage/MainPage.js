@@ -1,5 +1,5 @@
 import './mainPage.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ReactComponent as PinSvg } from '../../assets/icons/pin.svg';
 import { ReactComponent as UnpinSvg } from '../../assets/icons/unpin.svg';
 import { ReactComponent as ColorSvg } from '../../assets/icons/color.svg';
