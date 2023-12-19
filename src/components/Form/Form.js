@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ReactComponent as CheckSvg } from '../../assets/icons/check-icon.svg';
 import { ReactComponent as PinSvg } from '../../assets/icons/pin.svg';
 import { ReactComponent as UnpinSvg } from '../../assets/icons/unpin.svg';
